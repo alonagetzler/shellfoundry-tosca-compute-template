@@ -20,23 +20,23 @@ class {{cookiecutter.driver_name}} (ResourceDriverInterface):
         :return:
         """
         pass
-		
-	# <editor-fold desc="Networking Standard Commands">
+        
+    # <editor-fold desc="Networking Standard Commands">
     def restore(self, context, cancellation_context, path, restore_method, configuration_type, vrf_management_name):
         """
         Restores a configuration file
         :param ResourceCommandContext context: The context object for the command with resource and reservation info
-		:type context: ResourceCommandContext
+        :type context: ResourceCommandContext
         :param CancellationContext cancellation_context: Object to signal a request for cancellation. Must be enabled in drivermetadata.xml as well
-		:type cancellation_context: CancellationContext
+        :type cancellation_context: CancellationContext
         :param str path: The path to the configuration file, including the configuration file name.
-		:type path: str
+        :type path: str
         :param str restore_method: Determines whether the restore should append or override the current configuration.
-		:type restore_method: str
+        :type restore_method: str
         :param str configuration_type: Specify whether the file should update the startup or running config.
-		:type configuration_type: str
+        :type configuration_type: str
         :param str vrf_management_name: Optional. Virtual routing and Forwarding management name
-		:type vrf_management_name: str
+        :type vrf_management_name: str
         """
         pass
 
@@ -44,15 +44,15 @@ class {{cookiecutter.driver_name}} (ResourceDriverInterface):
         """
         Creates a configuration file and saves it to the provided destination
         :param ResourceCommandContext context: The context object for the command with resource and reservation info
-		:type context: ResourceCommandContext
+        :type context: ResourceCommandContext
         :param CancellationContext cancellation_context: Object to signal a request for cancellation. Must be enabled in drivermetadata.xml as well
-		:type cancellation_context: CancellationContext
+        :type cancellation_context: CancellationContext
         :param str configuration_type: Specify whether the file should update the startup or running config. Value can one
-		:type configuration_type: str
+        :type configuration_type: str
         :param str folder_path: The path to the folder in which the configuration file will be saved.
-		:type folder_path: str 
+        :type folder_path: str 
         :param str vrf_management_name: Optional. Virtual routing and Forwarding management name
-		:type vrf_management_name: str
+        :type vrf_management_name: str
         :return The configuration file name.
         :rtype: str
         """
@@ -62,12 +62,12 @@ class {{cookiecutter.driver_name}} (ResourceDriverInterface):
         """
         Upload and updates firmware on the resource
         :param ResourceCommandContext context: The context object for the command with resource and reservation info
-		:type context: ResourceCommandContext
-		:type cancellation_context: CancellationContext
+        :type context: ResourceCommandContext
+        :type cancellation_context: CancellationContext
         :param str file_path: firmware file name
-		:type file_path: str
+        :type file_path: str
         :param str remote_host: path to tftp server where firmware file is stored
-		:type remote_host: str
+        :type remote_host: str
         """
         pass
 
@@ -75,11 +75,11 @@ class {{cookiecutter.driver_name}} (ResourceDriverInterface):
         """
         Executes a custom command on the device
         :param ResourceCommandContext context: The context object for the command with resource and reservation info
-		:type context: ResourceCommandContext
+        :type context: ResourceCommandContext
         :param CancellationContext cancellation_context: Object to signal a request for cancellation. Must be enabled in drivermetadata.xml as well
-		:type cancellation_context: CancellationContext
+        :type cancellation_context: CancellationContext
         :param str custom_command: The command to run. Note that commands that require a response are not supported.
-		:type custom_command: str
+        :type custom_command: str
         :return: the command result text
         :rtype: str
         """
@@ -89,11 +89,11 @@ class {{cookiecutter.driver_name}} (ResourceDriverInterface):
         """
         Executes a custom command on the device in configuration mode
         :param ResourceCommandContext context: The context object for the command with resource and reservation info
-		:type context: ResourceCommandContext
+        :type context: ResourceCommandContext
         :param CancellationContext cancellation_context: Object to signal a request for cancellation. Must be enabled in drivermetadata.xml as well
-		:type cancellation_context: CancellationContext
+        :type cancellation_context: CancellationContext
         :param str custom_command: The command to run. Note that commands that require a response are not supported.
-		:type custom_command: str
+        :type custom_command: str
         :return: the command result text
         :rtype: str
         """
@@ -103,28 +103,28 @@ class {{cookiecutter.driver_name}} (ResourceDriverInterface):
         """
         Sends a graceful shutdown to the device
         :param ResourceCommandContext context: The context object for the command with resource and reservation info
-		:type context: ResourceCommandContext
+        :type context: ResourceCommandContext
         :param CancellationContext cancellation_context: Object to signal a request for cancellation. Must be enabled in drivermetadata.xml as well
-		:type cancellation_context: CancellationContext
+        :type cancellation_context: CancellationContext
         """
         pass
 
     # </editor-fold>
-	
-	# <editor-fold desc="Orchestration Save and Restore Standard">
+    
+    # <editor-fold desc="Orchestration Save and Restore Standard">
     def orchestration_save(self, context, cancellation_context, mode, custom_params=None):
         """
         Saves the Shell state and returns a description of the saved artifacts and information
         This command is intended for API use only by sandbox orchestration scripts to implement
         a save and restore workflow
         :param ResourceCommandContext context: the context object containing resource and reservation info
-		:type context: ResourceCommandContext
+        :type context: ResourceCommandContext
         :param CancellationContext cancellation_context: Object to signal a request for cancellation. Must be enabled in drivermetadata.xml as well
-		:type cancellation_context: CancellationContext
+        :type cancellation_context: CancellationContext
         :param str mode: Snapshot save mode, can be one of two values 'shallow' (default) or 'deep'
-		:type mode: str
+        :type mode: str
         :param str custom_params: Set of custom parameters for the save operation
-		:type custom_params: str
+        :type custom_params: str
         :return: SavedResults serialized as JSON
         :rtype: OrchestrationSaveResult
         """
@@ -164,11 +164,11 @@ class {{cookiecutter.driver_name}} (ResourceDriverInterface):
         """
         Restores a saved artifact previously saved by this Shell driver using the orchestration_save function
         :param ResourceCommandContext context: The context object for the command with resource and reservation info
-		:type context: ResourceCommandContext
+        :type context: ResourceCommandContext
         :param CancellationContext cancellation_context: Object to signal a request for cancellation. Must be enabled in drivermetadata.xml as well
-		:type cancellation_context: CancellationContext
+        :type cancellation_context: CancellationContext
         :param str saved_details: A JSON string representing the state to restore including saved artifacts and info
-		:type saved_details: str
+        :type saved_details: str
         :return: None
         """
         '''
@@ -216,7 +216,7 @@ class {{cookiecutter.driver_name}} (ResourceDriverInterface):
 
     # </editor-fold>
 
-	# <editor-fold desc="Discovery">
+    # <editor-fold desc="Discovery">
     def get_inventory(self, context):
         """
         Queries the device and returns a list of sub-resources and attribute values to CloudShell
@@ -231,7 +231,7 @@ class {{cookiecutter.driver_name}} (ResourceDriverInterface):
         # resource.add_sub_resource('1', sub resource)
 
         return resource.create_autoload_details()
-		
+    
     # </editor-fold>
 
     # <editor-fold desc="Health Check">
@@ -239,12 +239,12 @@ class {{cookiecutter.driver_name}} (ResourceDriverInterface):
     def health_check(self,cancellation_context):
         """
         Checks if the device is up and connectable
-		:type context: ResourceCommandContext
+        :type context: ResourceCommandContext
         :return: None
         :exception Exception: Raises an error if cannot connect
         """
-		# run 'shellfoundry generate' in order to create classes that represent your data model
-		resource = {{cookiecutter.model_name}}.create_from_context(context)
+        # run 'shellfoundry generate' in order to create classes that represent your data model
+        resource = {{cookiecutter.model_name}}.create_from_context(context)
         pass
 
     # </editor-fold>
