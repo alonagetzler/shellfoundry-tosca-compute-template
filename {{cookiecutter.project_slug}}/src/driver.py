@@ -45,8 +45,7 @@ class {{cookiecutter.driver_name}} (ResourceDriverInterface):
         resource.model = 'specify the shell model'
 
         # Example of a shell with 2 ports
-        port1 = ResourcePort()
-        port1.name = 'Port 1'
+        port1 = ResourcePort('Port 1')
         port1.ipv4_address = '192.168.10.7'
         resource.add_sub_resource('1', port1)
 
