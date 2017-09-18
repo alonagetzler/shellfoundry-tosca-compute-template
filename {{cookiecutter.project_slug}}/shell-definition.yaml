@@ -14,7 +14,7 @@ imports:
 
 node_types:
 
-  vendor.switch.{{cookiecutter.model_name}}:
+  vendor.{{cookiecutter.model_name}}:
     derived_from: cloudshell.nodes.Compute
     #properties:
     #  my_property:
